@@ -44,5 +44,9 @@ bun.lockb
 next-env.d.ts
 
 # template-specific
-/docs
+/docs/*
+!/docs/
+!/docs/PROMPT.txt
+!/docs/CODEBASE_MAP.md
+!/docs/*_TASKS.md
 /for-agent
