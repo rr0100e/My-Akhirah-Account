@@ -3,6 +3,14 @@
 Role: Campaigns and donation entry points owner  
 Primary ownership: campaigns, campaign details, campaign filters, and donation entry points.
 
+## Shared Product Contract
+
+- [ ] Use the shared header/footer route set: `/`, `/about`, `/campaigns`, `/programmes`, `/blog`, `/events`, `/faq`, `/contact`, `/volunteer`, `/newsletter`.
+- [ ] Use the existing brand colors, spacing, buttons, and card patterns instead of inventing a separate visual style.
+- [ ] Point every donation CTA to the destination approved by Mikhail.
+- [ ] Do not change payment provider, Convex, Clerk/auth, or admin files.
+- [ ] Keep every new page mobile-first and readable at mobile, tablet, and desktop widths.
+
 ## Setup Checklist
 
 - [ ] Read `README.md`.
@@ -15,10 +23,10 @@ Primary ownership: campaigns, campaign details, campaign filters, and donation e
 
 ## Week 1: Campaign Page Structure
 
-- [ ] Review `src/app/page.tsx`.
-- [ ] Review `src/components/cards/CampaignCard.tsx`.
-- [ ] Review `src/lib/server/homepage.ts`.
-- [ ] Review only the public campaign data shape approved by Mikhail.
+- [ ] Extract campaign UI patterns from `src/app/page.tsx` and reuse them on `/campaigns`.
+- [ ] Refactor/update `src/components/cards/CampaignCard.tsx` to support listing + detail page needs.
+- [ ] Create the campaign listing loading state to visually match the homepage campaign card layout.
+- [ ] Use only Mikhail-approved public campaign fields (title, slug, image, summary, totals, countries, status).
 - [ ] Build `/campaigns` page shell.
 - [ ] Build `/campaigns/[slug]` page shell.
 - [ ] Add campaign page metadata.
@@ -28,12 +36,12 @@ Primary ownership: campaigns, campaign details, campaign filters, and donation e
 
 ## Week 2: Campaign Data and Filters
 
-- [ ] Connect `/campaigns` to Convex-backed campaign data approved by Mikhail (no hardcoded/mock production data in final PR).
-- [ ] Connect `/campaigns/[slug]` to Convex-backed campaign detail data approved by Mikhail.
+- [ ] Connect `/campaigns` to the Mikhail-approved campaign data interface, with no hardcoded production data in final PR.
+- [ ] Connect `/campaigns/[slug]` to the Mikhail-approved campaign detail data interface, with no hardcoded production data in final PR.
 - [ ] Display campaign title, summary, image, countries, amount raised, and target amount.
 - [ ] Add filter UI for active campaigns.
-- [ ] Add filter UI for featured campaigns if supported by the approved data interface.
-- [ ] Add filter UI for fund or programme when available.
+- [ ] Add featured-campaign filter UI only after Mikhail confirms the approved data interface includes `isFeatured`.
+- [ ] Add fund/programme filter UI using the approved `fund` or `programme` field; if neither field is approved, add a note to the PR explaining that the filter is blocked by missing approved data.
 - [ ] Keep filters reflected in the URL where practical.
 - [ ] Add clear empty states for no matching campaigns.
 - [ ] Open a PR for campaign data and filters.
@@ -42,11 +50,11 @@ Primary ownership: campaigns, campaign details, campaign filters, and donation e
 
 - [ ] Add clear donate CTAs on campaign cards.
 - [ ] Add clear donate CTA on campaign detail pages.
-- [ ] Build UI for one-off amount selection if assigned by Mikhail.
-- [ ] Build UI for campaign or fund selection if assigned by Mikhail.
-- [ ] Build UI for cover-fees option if assigned by Mikhail.
-- [ ] Build UI for anonymous donation option if assigned by Mikhail.
-- [ ] Build UI for donor message if assigned by Mikhail.
+- [ ] Build one-off amount selection UI only from the fields in Mikhail's approved donation UI brief.
+- [ ] Build campaign/fund selection UI only from the fields in Mikhail's approved donation UI brief.
+- [ ] Build cover-fees option UI only from the fields in Mikhail's approved donation UI brief.
+- [ ] Build anonymous donation option UI only from the fields in Mikhail's approved donation UI brief.
+- [ ] Build donor message UI only from the fields in Mikhail's approved donation UI brief.
 - [ ] Ensure campaign and fund selection options shown in UI come from Mikhail-approved Convex data.
 - [ ] Do not calculate trusted payment totals on the client.
 - [ ] Ask Mikhail to review before opening the PR if donation flow is touched.
@@ -57,10 +65,10 @@ Primary ownership: campaigns, campaign details, campaign filters, and donation e
 - [ ] Polish campaign listing spacing on mobile.
 - [ ] Polish campaign listing spacing on desktop.
 - [ ] Polish campaign detail page readability.
-- [ ] Check all campaign images have useful alt text.
-- [ ] Check campaign links are not broken.
-- [ ] Check campaign empty states are clear.
-- [ ] Check donation entry points route correctly.
+- [ ] Add/fix alt text for every campaign image.
+- [ ] Fix all broken campaign links in listing and detail pages.
+- [ ] Replace the campaigns empty state with this structure: heading "No Campaigns Found", one sentence explaining filters, and a CTA linking to `/contact`.
+- [ ] Fix donation entry routes so every donation CTA points to the expected destination.
 - [ ] Run manual QA for campaigns on mobile, tablet, and desktop.
 - [ ] Open final polish PR.
 

@@ -3,6 +3,14 @@
 Role: Forms, programmes, and impact owner  
 Primary ownership: contact, volunteer, newsletter, programmes, impact sections, and form feedback.
 
+## Shared Product Contract
+
+- [ ] Use the shared header/footer route set: `/`, `/about`, `/campaigns`, `/programmes`, `/blog`, `/events`, `/faq`, `/contact`, `/volunteer`, `/newsletter`.
+- [ ] Use the existing brand colors, spacing, buttons, and card patterns instead of inventing a separate visual style.
+- [ ] Point every donation CTA to the destination approved by Mikhail.
+- [ ] Do not change payment provider, Convex, Clerk/auth, or admin files.
+- [ ] Keep every new page mobile-first and readable at mobile, tablet, and desktop widths.
+
 ## Setup Checklist
 
 - [ ] Read `README.md`.
@@ -14,11 +22,11 @@ Primary ownership: contact, volunteer, newsletter, programmes, impact sections, 
 
 ## Week 1: Form and Programme Page Structure
 
-- [ ] Review `src/app/api/contact/route.ts`.
-- [ ] Review `src/app/api/newsletter/route.ts`.
-- [ ] Review `src/app/api/volunteer/route.ts`.
-- [ ] Review `src/lib/validation/forms.ts`.
-- [ ] Review only the public form submission interface approved by Mikhail.
+- [ ] Create a field map for the contact page in `docs/team/tasks/form-field-map.md` with field label, `name`, `type`, `autocomplete`, required/optional, and API payload key.
+- [ ] Create a field map for the newsletter signup in `docs/team/tasks/form-field-map.md` with field label, `name`, `type`, `autocomplete`, required/optional, and API payload key.
+- [ ] Create a field map for the volunteer page in `docs/team/tasks/form-field-map.md` with field label, `name`, `type`, `autocomplete`, required/optional, and API payload key.
+- [ ] Apply validation rules from `src/lib/validation/forms.ts` to visible form UI and error messages.
+- [ ] Use only Mikhail-approved public form fields and submission payload shape.
 - [ ] Build `/contact` page shell.
 - [ ] Build `/volunteer` page shell.
 - [ ] Build `/newsletter` page or section shell.
@@ -40,12 +48,12 @@ Primary ownership: contact, volunteer, newsletter, programmes, impact sections, 
 
 ## Week 3: Admin Lists and Impact Work
 
-- [ ] Add or support user-facing contact submission status UI if assigned by Mikhail.
-- [ ] Add or support user-facing volunteer application status UI if assigned by Mikhail.
-- [ ] Add or support user-facing newsletter signup status UI if assigned by Mikhail.
-- [ ] Review only the public impact data shape approved by Mikhail.
-- [ ] Review `src/components/sections/Stats.tsx`.
-- [ ] Improve impact/statistics sections where needed.
+- [ ] Add user-facing contact submission status UI using the status states approved by Mikhail.
+- [ ] Add user-facing volunteer application status UI using the status states approved by Mikhail.
+- [ ] Add user-facing newsletter signup status UI using the status states approved by Mikhail.
+- [ ] Use only Mikhail-approved public impact data fields in UI.
+- [ ] Update `src/components/sections/Stats.tsx` to display real impact metrics cleanly.
+- [ ] Fix impact/statistics section layout, labels, and fallback behavior where needed.
 - [ ] Connect programme page to Convex-backed programme data where available and approved by Mikhail.
 - [ ] Add clear empty states for programmes and impact data.
 - [ ] Open a PR for user-facing form status or impact work.
@@ -58,8 +66,8 @@ Primary ownership: contact, volunteer, newsletter, programmes, impact sections, 
 - [ ] Polish volunteer page on desktop.
 - [ ] Polish newsletter signup on mobile and desktop.
 - [ ] Polish programme page on mobile and desktop.
-- [ ] Check all form fields have useful `name`, `type`, and `autocomplete` values.
-- [ ] Check all forms can be completed with keyboard navigation.
+- [ ] Add/fix `name`, `type`, and `autocomplete` values on all form fields.
+- [ ] Fix keyboard navigation issues so all forms can be completed without a mouse.
 - [ ] Run manual QA for all forms.
 - [ ] Open final polish PR.
 

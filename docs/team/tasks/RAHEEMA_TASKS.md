@@ -3,6 +3,14 @@
 Role: Blog, events, content search, and technical SEO owner  
 Primary ownership: blog/news pages, event pages, content search/filter UI, technical SEO metadata, structured data, internal links, and content states.
 
+## Shared Product Contract
+
+- [ ] Use the shared header/footer route set: `/`, `/about`, `/campaigns`, `/programmes`, `/blog`, `/events`, `/faq`, `/contact`, `/volunteer`, `/newsletter`.
+- [ ] Use the existing brand colors, spacing, buttons, and card patterns instead of inventing a separate visual style.
+- [ ] Point every donation CTA to the destination approved by Mikhail.
+- [ ] Do not change payment provider, Convex, Clerk/auth, or admin files.
+- [ ] Keep every new page mobile-first and readable at mobile, tablet, and desktop widths.
+
 ## Setup Checklist
 
 - [ ] Read `README.md`.
@@ -14,11 +22,11 @@ Primary ownership: blog/news pages, event pages, content search/filter UI, techn
 
 ## Week 1: Blog and Event Page Structure
 
-- [ ] Review `src/components/cards/BlogCard.tsx`.
-- [ ] Review `src/components/cards/EventCard.tsx`.
-- [ ] Review only the public post and event data shapes approved by Mikhail.
-- [ ] Review existing site metadata in `src/app/layout.tsx`.
-- [ ] Review existing homepage heading structure in `src/app/page.tsx`.
+- [ ] Update `src/components/cards/BlogCard.tsx` to support real title length, excerpt length, and date display.
+- [ ] Update `src/components/cards/EventCard.tsx` to support real event date/location display and long titles.
+- [ ] Use only Mikhail-approved public post/event fields (title, slug, excerpt, image, date, tags/category, location).
+- [ ] Add blog/event metadata using the same title template and description style as `src/app/layout.tsx`.
+- [ ] Make blog/event heading hierarchy match the homepage pattern: one page `<h1>`, section `<h2>`, card/detail subheadings `<h3>`.
 - [ ] Build `/blog` page shell.
 - [ ] Build `/blog/[slug]` page shell.
 - [ ] Build `/events` page shell.
@@ -31,15 +39,15 @@ Primary ownership: blog/news pages, event pages, content search/filter UI, techn
 
 ## Week 2: Content Data and Filters
 
-- [ ] Connect `/blog` to Convex-backed post data approved by Mikhail (no hardcoded/mock production data in final PR).
-- [ ] Connect `/blog/[slug]` to Convex-backed post detail data approved by Mikhail.
-- [ ] Connect `/events` to Convex-backed event data approved by Mikhail.
-- [ ] Connect `/events/[slug]` to Convex-backed event detail data approved by Mikhail.
+- [ ] Connect `/blog` to the Mikhail-approved post data interface, with no hardcoded production data in final PR.
+- [ ] Connect `/blog/[slug]` to the Mikhail-approved post detail data interface, with no hardcoded production data in final PR.
+- [ ] Connect `/events` to the Mikhail-approved event data interface, with no hardcoded production data in final PR.
+- [ ] Connect `/events/[slug]` to the Mikhail-approved event detail data interface, with no hardcoded production data in final PR.
 - [ ] Display titles, excerpts, published dates, tags, categories, event dates, and locations where available.
 - [ ] Add search/filter UI for posts.
 - [ ] Add search/filter UI for events.
 - [ ] Keep search or filter state in the URL where practical.
-- [ ] Confirm filtered URLs do not create low-value duplicate pages.
+- [ ] Set canonical behavior for filtered URLs so low-value duplicate pages are not indexable.
 - [ ] Use descriptive internal link text instead of "click here" or vague labels.
 - [ ] Add breadcrumb-style navigation where it fits the page design.
 - [ ] Add clear empty states for no matching content.
@@ -60,12 +68,12 @@ Primary ownership: blog/news pages, event pages, content search/filter UI, techn
 - [ ] Add Open Graph title, description, URL, and image metadata where available.
 - [ ] Add Twitter card metadata where available.
 - [ ] Add self-referencing canonical URLs for indexable blog and event pages.
-- [ ] Confirm search/filter parameter pages canonicalize to the right main page unless Mikhail approves indexable filtered pages.
+- [ ] Set search/filter parameter pages to canonicalize to `/blog` or `/events` unless Mikhail provides written approval for indexable filtered pages.
 - [ ] Add Article JSON-LD for blog detail pages where content is available.
 - [ ] Add Event JSON-LD for event detail pages where content is available.
 - [ ] Ensure structured data matches visible on-page content.
-- [ ] Check heading hierarchy on all blog and event pages.
-- [ ] Check image alt text on all blog and event cards.
+- [ ] Fix heading hierarchy issues on all blog and event pages.
+- [ ] Add/fix alt text for all meaningful images on blog and event cards.
 - [ ] Open a PR for states, metadata, canonicals, and structured data.
 
 ## Week 4: Polish, Internal Links, and SEO QA
@@ -75,17 +83,17 @@ Primary ownership: blog/news pages, event pages, content search/filter UI, techn
 - [ ] Polish event listing layout on mobile.
 - [ ] Polish event listing layout on desktop.
 - [ ] Add internal links from homepage cards to detail pages.
-- [ ] Check blog and event links are not broken.
-- [ ] Check cards handle long titles and excerpts.
-- [ ] Check every important blog/event page is reachable within 3 clicks from the homepage.
-- [ ] Check listing pages link to detail pages with descriptive anchor text.
-- [ ] Check meaningful images have descriptive alt text.
-- [ ] Check decorative images use empty alt text where appropriate.
-- [ ] Check images reserve layout space to reduce CLS.
-- [ ] Check blog and event pages are mobile friendly.
-- [ ] Check no blog/event page has duplicate titles or duplicate descriptions.
-- [ ] Check sitemap coverage with Mikhail if sitemap generation is implemented.
-- [ ] Check `robots.txt` behavior with Mikhail if robots rules are implemented.
+- [ ] Fix all broken blog/event links in listing and detail pages.
+- [ ] Fix card layout for long titles and long excerpts.
+- [ ] Add missing internal links so key blog/event pages are reachable within 3 clicks from homepage.
+- [ ] Rewrite weak anchor text on listing pages to descriptive link text.
+- [ ] Add/fix descriptive alt text for meaningful images.
+- [ ] Set empty alt text for decorative images.
+- [ ] Set image dimensions/aspect handling to reduce CLS.
+- [ ] Fix mobile usability issues on blog/event pages.
+- [ ] Resolve duplicate title/description metadata issues.
+- [ ] Verify sitemap coverage with Mikhail and add missing pages where required.
+- [ ] Verify `robots.txt` rules with Mikhail and fix incorrect allow/disallow rules.
 - [ ] Create a short SEO QA note listing remaining issues and owner.
 - [ ] Run manual QA for blog and events on mobile, tablet, and desktop.
 - [ ] Open final polish PR.

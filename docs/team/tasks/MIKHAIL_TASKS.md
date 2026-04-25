@@ -3,6 +3,14 @@
 Role: Manager, final reviewer, and owner of the hardest/highest-risk work  
 Primary ownership: all payment providers, Convex, Clerk, authentication, admin access, webhooks, donation reconciliation, receipts, production payment setup, critical security approval, merges, and launch approval.
 
+## Shared Product Contract
+
+- [ ] Approve the shared header/footer route set: `/`, `/about`, `/campaigns`, `/programmes`, `/blog`, `/events`, `/faq`, `/contact`, `/volunteer`, `/newsletter`.
+- [ ] Approve the donation CTA destination before interns wire donation entry points.
+- [ ] Own every payment provider, Convex, Clerk/auth, admin, webhook, receipt, donor-data, and production-secret change.
+- [ ] Keep intern PRs focused on public UI, content, QA, and approved data interfaces.
+- [ ] Resolve cross-team conflicts before merging overlapping UI changes.
+
 ## Setup Checklist
 
 - [ ] Read `README.md`.
@@ -18,14 +26,14 @@ Primary ownership: all payment providers, Convex, Clerk, authentication, admin a
 
 ## Week 1: Critical Flow Decisions
 
-- [ ] Define the exact donation checkout flow.
-- [ ] Define required donation fields.
-- [ ] Define supported currencies for launch.
-- [ ] Define supported giving types for launch.
-- [ ] Define campaign/fund selection behavior.
-- [ ] Define fee coverage behavior.
-- [ ] Define anonymous donation behavior.
-- [ ] Define donor message behavior.
+- [ ] Write the exact donation checkout flow in `docs/project/PAYMENTS_PLAN.md`.
+- [ ] Add required donation fields to `docs/project/PAYMENTS_PLAN.md`.
+- [ ] Add supported launch currencies to `docs/project/PAYMENTS_PLAN.md`.
+- [ ] Add supported giving types to `docs/project/PAYMENTS_PLAN.md`.
+- [ ] Add campaign/fund selection behavior to `docs/project/PAYMENTS_PLAN.md`.
+- [ ] Add fee coverage behavior to `docs/project/PAYMENTS_PLAN.md`.
+- [ ] Add anonymous donation behavior to `docs/project/PAYMENTS_PLAN.md`.
+- [ ] Add donor message behavior to `docs/project/PAYMENTS_PLAN.md`.
 - [ ] Define Donorbox integration approach.
 - [ ] Define Flutterwave integration approach.
 - [ ] Define LaunchGood campaign-link approach if used.
@@ -36,9 +44,9 @@ Primary ownership: all payment providers, Convex, Clerk, authentication, admin a
 - [ ] Confirm Flutterwave redirect URLs.
 - [ ] Confirm Flutterwave webhook URLs.
 - [ ] Confirm payment status states: pending, paid, failed, cancelled, expired, duplicate webhook, invalid webhook.
-- [ ] Review Yasar's donor journey notes.
-- [ ] Review Khalid's public navigation and content hierarchy notes.
-- [ ] Review the first PR from every intern.
+- [ ] Approve or request changes on Yasar's donor journey notes with written feedback.
+- [ ] Approve or request changes on Khalid's navigation/content hierarchy notes with written feedback.
+- [ ] Complete first-pass PR reviews for every intern with at least one actionable comment each.
 
 ## Week 2: Payment Checkout Implementation
 
@@ -60,7 +68,7 @@ Primary ownership: all payment providers, Convex, Clerk, authentication, admin a
 - [ ] Verify checkout behavior with Flutterwave sandbox.
 - [ ] Ask Yasar to QA public donation entry points.
 - [ ] Ask Khalid to QA navigation and public content flows.
-- [ ] Review intern PRs for public pages, campaign pages, content pages, and forms.
+- [ ] For every intern PR covering public pages, campaign pages, content pages, or forms, leave approve/request-changes feedback, verify the PR checklist, and merge only PRs that meet requirements.
 
 ## Week 3: Webhooks, Reconciliation, and Receipts
 
@@ -85,7 +93,7 @@ Primary ownership: all payment providers, Convex, Clerk, authentication, admin a
 
 ## Week 4: Final Review and Launch Approval
 
-- [ ] Review all open PRs for merge readiness.
+- [ ] Close or merge all open PRs after final checklist validation.
 - [ ] Confirm public pages are complete.
 - [ ] Confirm donation checkout is complete.
 - [ ] Confirm webhook verification is complete.
