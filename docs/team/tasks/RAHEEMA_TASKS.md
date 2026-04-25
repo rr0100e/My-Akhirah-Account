@@ -31,10 +31,10 @@ Primary ownership: blog/news pages, event pages, content search/filter UI, techn
 
 ## Week 2: Content Data and Filters
 
-- [ ] Connect `/blog` to the post data interface approved by Mikhail.
-- [ ] Connect `/blog/[slug]` to the post data interface approved by Mikhail.
-- [ ] Connect `/events` to the event data interface approved by Mikhail.
-- [ ] Connect `/events/[slug]` to the event data interface approved by Mikhail.
+- [ ] Connect `/blog` to Convex-backed post data approved by Mikhail (no hardcoded/mock production data in final PR).
+- [ ] Connect `/blog/[slug]` to Convex-backed post detail data approved by Mikhail.
+- [ ] Connect `/events` to Convex-backed event data approved by Mikhail.
+- [ ] Connect `/events/[slug]` to Convex-backed event detail data approved by Mikhail.
 - [ ] Display titles, excerpts, published dates, tags, categories, event dates, and locations where available.
 - [ ] Add search/filter UI for posts.
 - [ ] Add search/filter UI for events.
@@ -50,6 +50,7 @@ Primary ownership: blog/news pages, event pages, content search/filter UI, techn
 - [ ] Add polished loading states for blog listing.
 - [ ] Add polished loading states for event listing.
 - [ ] Add clear error states for failed content loading.
+- [ ] Ensure SEO metadata and structured data use real Convex content values (title, summary, date, slug, image) where available.
 - [ ] Add unique `<title>` metadata for blog listing.
 - [ ] Add unique `<title>` metadata for blog detail pages.
 - [ ] Add unique `<title>` metadata for event listing.

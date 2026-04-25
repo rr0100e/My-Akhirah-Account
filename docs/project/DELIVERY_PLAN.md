@@ -42,9 +42,9 @@ Payment and platform tasks:
 
 Feature tasks:
 
-- Muneeb: connect campaign UI to data interfaces approved by Mikhail, add filters, campaign progress, and donate CTAs.
-- Raheema: connect post/event UI to data interfaces approved by Mikhail, add search/filter behavior, technical SEO metadata, and polish detail pages.
-- Mustaf: connect forms to existing API routes, improve validation display, and add success/error states.
+- Muneeb: connect campaign UI to Convex-backed campaign data approved by Mikhail, add filters, campaign progress, and donate CTAs.
+- Raheema: connect post/event UI to Convex-backed content data approved by Mikhail, add search/filter behavior, technical SEO metadata, and polish detail pages.
+- Mustaf: connect forms to the submission flow approved by Mikhail (Convex-backed path where implemented), improve validation display, and add success/error states.
 
 Content and QA tasks:
 

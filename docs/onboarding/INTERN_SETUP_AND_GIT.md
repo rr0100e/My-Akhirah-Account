@@ -1,18 +1,18 @@
-# Intern Setup, Git, and PR Workflow
+# Internship Onboarding
 
-This guide is the exact path a new team member should follow on a fresh computer.
+## Before You Start
 
-## 1) Install Required Tools
+You need:
 
-Install these first:
+- A GitHub account
+- Git installed
+- Node.js installed
+- Bun installed
+- VS Code or Cursor installed
 
-- Git (required for version control)
-- GitHub account access (required for forks and PRs)
-- Bun (project package manager)
-- Node.js LTS (recommended because some tooling depends on Node)
-- VS Code or Cursor (recommended editor)
+### Check everything is installed
 
-Check installations in a terminal:
+Open your Terminal app and run:
 
 ```bash
 git --version
@@ -20,20 +20,75 @@ node --version
 bun --version
 ```
 
-If any command fails, install that tool before continuing.
+If any command shows an error, install that tool first.
 
-## 2) Fork and Clone the Repository
+## Step 1: Make your own copy of the project (Fork)
 
-1. Open the main repository on GitHub: `https://github.com/mwijanarko1/My-Akhirah-Account`.
-2. Click **Fork** and create your own copy under your account.
-3. Clone your fork to your computer:
+1. Open this link: `https://github.com/mwijanarko1/My-Akhirah-Account`
+2. Click the **Fork** button (top-right).
+3. GitHub will create your own copy under your account.
+
+Why this matters:
+
+- You work in your own copy safely.
+- You do not accidentally change the main project directly.
+
+## Step 2: Download your fork to your computer (Clone)
+
+Choose **one** of these options.
+
+### Option A (Terminal - copy/paste)
+
+Run this command (replace `YOUR_GITHUB_USERNAME`):
 
 ```bash
-git clone https://github.com/<your-username>/My-Akhirah-Account.git
+git clone https://github.com/YOUR_GITHUB_USERNAME/My-Akhirah-Account.git
 cd My-Akhirah-Account
 ```
 
-4. Add the original repository as `upstream` so you can pull latest changes:
+### Option B (Cursor or VS Code style editor)
+
+1. Open Cursor or VS Code.
+2. Open the Command Palette:
+   - macOS: `Cmd + Shift + P`
+   - Windows: `Ctrl + Shift + P`
+3. Type: `Git: Clone` or `Clone Repository`
+4. Paste your fork URL:
+   - `https://github.com/YOUR_GITHUB_USERNAME/My-Akhirah-Account.git`
+5. Choose a folder on your computer.
+6. Click **Open** when cloning is finished.
+
+### Option C (Create your own folder first, then ask AI)
+
+Use this if you want full control of where files go.
+
+1. Create a new empty folder anywhere you want (example: `My-Akhirah-Work`).
+2. Open that empty folder in your editor.
+3. Ask AI to clone your fork inside this folder.
+4. Ask AI to move files from the cloned subfolder into the root of your folder.
+
+Copy this prompt to your AI:
+
+```text
+I already opened an empty folder.
+Please do these steps:
+1) Clone this repo into this folder:
+https://github.com/YOUR_GITHUB_USERNAME/My-Akhirah-Account.git
+2) Move all files from the cloned folder into the current folder root (including hidden files like .gitignore).
+3) Remove the now-empty cloned subfolder.
+4) Confirm that README.md is in the current folder root.
+```
+
+Important:
+
+- Run those commands only inside your new empty folder.
+- After this, files should be directly in your chosen folder (not inside another nested folder).
+
+After cloning, make sure you are inside the project folder before Step 3.
+
+## Step 3: Connect to the main team project
+
+Run:
 
 ```bash
 git remote add upstream https://github.com/mwijanarko1/My-Akhirah-Account.git
@@ -42,118 +97,109 @@ git remote -v
 
 You should see:
 
-- `origin` -> your fork
-- `upstream` -> main team repository
+- `origin` (this is your fork)
+- `upstream` (this is the main team project)
 
-## 3) Install Dependencies and Run Locally
+## Step 4: Install the project and run it
+
+Run:
 
 ```bash
 bun install
 bun run dev
 ```
 
-Then open [http://localhost:3000](http://localhost:3000).
+Then open: [http://localhost:3000](http://localhost:3000)
 
-## 4) Configure Environment Variables
+If you see the website, setup is successful.
 
-Create `.env.local` using credentials provided by Mikhail/team manager.
+## Step 5: Add environment file
 
-Important:
+Create a file named `.env.local` in the project root.
 
-- Never commit `.env.local` or real secrets.
-- Use sandbox/test payment credentials unless explicitly approved for production testing.
+Copy the values shared by Mikhail on slack
 
-## 5) Create a Branch Before Writing Code
+Very important:
 
-Never work directly on `main`.
+- Never share this file publicly.
+- Never upload this file to GitHub.
+- Never put real secret keys in chats or screenshots.
+
+## Step 6: Create a new branch before editing
+
+Always create a branch first.
+
+Run:
 
 ```bash
-git checkout -b feature/short-description
+git checkout -b feature/short-name
 ```
 
-Examples:
+Example:
 
-- `feature/campaign-filters`
-- `fix/faq-mobile-spacing`
-- `chore/update-about-copy`
+```bash
+git checkout -b feature/campaign-cards
+```
 
-## 6) Daily Git Workflow (Safe Beginner Flow)
+## Step 7: Do your work, save, and commit
 
-Before starting your task each day:
+After you make your changes:
+
+```bash
+git add .
+git commit -m "Update campaign cards layout"
+git push origin feature/campaign-cards
+```
+
+If your branch name is different, use your own branch name in the last command.
+
+## Step 8: Open a Pull Request (PR)
+
+1. Go to your fork on GitHub.
+2. Click **Compare & pull request**.
+3. Make sure:
+   - Base repository = `mwijanarko1/My-Akhirah-Account`
+   - Base branch = `main`
+   - Compare branch = your branch
+4. Add clear notes in the PR:
+   - What changed
+   - Why you changed it
+   - How to test it
+5. Add Mikhail as reviewer.
+
+## Step 9: Simple daily routine
+
+Every day before starting new code:
 
 ```bash
 git checkout main
 git fetch upstream
 git pull upstream main
 git push origin main
-git checkout <your-branch>
+```
+
+Then go back to your branch:
+
+```bash
+git checkout your-branch-name
 git rebase main
 ```
 
-Then do your work and commit in small steps:
+If this is confusing, ask Mikhail and do not guess.
 
-```bash
-git add .
-git commit -m "Add campaign filter chips to campaigns page"
-git push origin <your-branch>
-```
+## Golden Rules (Do Not Break)
 
-If `rebase` feels confusing, ask for help before forcing anything.
-
-## 7) Pull Request Workflow
-
-1. Push your branch to your fork.
-2. Open GitHub and create a PR from your branch to the main repository `main`.
-3. Assign Mikhail as reviewer.
-4. Keep the PR focused on one feature or one bug.
-
-Use this PR description template:
-
-```md
-## What changed
-- ...
-
-## Why
-- ...
-
-## How to test
-- ...
-
-## Screenshots (if UI change)
-- ...
-```
-
-## 8) Git and PR Best Practices
-
-- Pull latest `main` before starting new work.
-- Commit small, meaningful changes instead of one huge commit.
-- Write clear commit messages (`Add`, `Fix`, `Refactor`, `Docs`).
-- Do not mix unrelated changes in one PR.
-- Run checks before opening a PR:
-
-```bash
-bun run lint
-bun run build
-```
-
-- Resolve review comments by pushing new commits (do not delete history).
-- Ask for review early if your change touches shared components or data flow.
 - Never push directly to `main`.
-- Never commit secrets, keys, `.env.local`, or credentials.
+- Never commit `.env.local`.
+- Never change payment/auth/Convex security logic without Mikhail review.
+- Keep PRs small (one feature or one fix).
+- Ask for help early.
 
-## 9) Common Mistakes to Avoid
+## If Something Goes Wrong
 
-- Working on `main` instead of a feature branch
-- Forgetting to sync latest `main` before coding
-- Opening very large PRs that are hard to review
-- Editing generated files in `convex/_generated/`
-- Changing payment/auth/Convex/security logic without Mikhail review
+Message Mikhail immediately if:
 
-## 10) When to Ask for Help Immediately
-
-Ask Mikhail immediately if:
-
-- You hit merge conflicts you do not understand
-- Your branch diverges heavily from `main`
-- You are unsure about payment, Clerk, Convex, admin permissions, or donor data handling
-- You think you may have exposed a secret accidentally
+- Git shows conflicts you do not understand
+- You are not sure which command to run
+- You think you leaked a key/secret
+- Your app is broken after pulling latest changes

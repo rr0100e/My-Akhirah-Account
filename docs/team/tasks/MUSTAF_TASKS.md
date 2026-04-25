@@ -27,9 +27,9 @@ Primary ownership: contact, volunteer, newsletter, programmes, impact sections, 
 
 ## Week 2: Form Submission and Validation
 
-- [ ] Connect contact form to the existing API route.
-- [ ] Connect volunteer form to the existing API route.
-- [ ] Connect newsletter signup to the existing API route.
+- [ ] Connect contact form to the existing submission flow approved by Mikhail (Convex-backed path where implemented).
+- [ ] Connect volunteer form to the existing submission flow approved by Mikhail (Convex-backed path where implemented).
+- [ ] Connect newsletter signup to the existing submission flow approved by Mikhail (Convex-backed path where implemented).
 - [ ] Show inline validation messages.
 - [ ] Show success states after successful submission.
 - [ ] Show error states after failed submission.
@@ -46,7 +46,7 @@ Primary ownership: contact, volunteer, newsletter, programmes, impact sections, 
 - [ ] Review only the public impact data shape approved by Mikhail.
 - [ ] Review `src/components/sections/Stats.tsx`.
 - [ ] Improve impact/statistics sections where needed.
-- [ ] Connect programme page to programme data where available.
+- [ ] Connect programme page to Convex-backed programme data where available and approved by Mikhail.
 - [ ] Add clear empty states for programmes and impact data.
 - [ ] Open a PR for user-facing form status or impact work.
 

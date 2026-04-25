@@ -28,8 +28,8 @@ Primary ownership: campaigns, campaign details, campaign filters, and donation e
 
 ## Week 2: Campaign Data and Filters
 
-- [ ] Connect `/campaigns` to the campaign data interface approved by Mikhail.
-- [ ] Connect `/campaigns/[slug]` to the campaign data interface approved by Mikhail.
+- [ ] Connect `/campaigns` to Convex-backed campaign data approved by Mikhail (no hardcoded/mock production data in final PR).
+- [ ] Connect `/campaigns/[slug]` to Convex-backed campaign detail data approved by Mikhail.
 - [ ] Display campaign title, summary, image, countries, amount raised, and target amount.
 - [ ] Add filter UI for active campaigns.
 - [ ] Add filter UI for featured campaigns if supported by the approved data interface.
@@ -47,6 +47,7 @@ Primary ownership: campaigns, campaign details, campaign filters, and donation e
 - [ ] Build UI for cover-fees option if assigned by Mikhail.
 - [ ] Build UI for anonymous donation option if assigned by Mikhail.
 - [ ] Build UI for donor message if assigned by Mikhail.
+- [ ] Ensure campaign and fund selection options shown in UI come from Mikhail-approved Convex data.
 - [ ] Do not calculate trusted payment totals on the client.
 - [ ] Ask Mikhail to review before opening the PR if donation flow is touched.
 - [ ] Open a PR for donation entry UI.
